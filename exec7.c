@@ -1,3 +1,7 @@
+// I have found out that the problem with math.h was that the compiler does not
+// automatically link the shared object file (libm.so) which contains the implementations
+// of the math.h functions to the executable -- solved by passing the -lm flag to the compiler
+// P.S.: an interesting read on this topic : https://bit.ly/36OJoFx (StackOverflow)
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
