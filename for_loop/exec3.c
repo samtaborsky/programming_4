@@ -30,8 +30,8 @@ int main(void) {
             }
         }
     }
-    else {
-        printf("The numbers are equal.\n");
+    else if (a == b) {
+        printf("The numbers are equal.");
     }
     printf("\n");
     return 0;
