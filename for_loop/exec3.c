@@ -6,27 +6,25 @@ int main(void) {
     scanf("%d %d", &a, &b);
     if (a < b) {
         if (a % 2 == 0) {
-            for (a; a <= b; a += 2) {
-                printf("%d, ", a);
+            for (int i = a; i <= b; i += 2) {
+                printf("%d, ", i);
             }
         }
         else {
-            a++;
-            for (a; a <= b; a += 2) {
-                printf("%d, ", a);
+            for (int i = a + 1; i <= b; i += 2) {
+                printf("%d, ", i);
             }
         }
     }
     else if (b < a) {
         if (b % 2 == 0) {
-            for (b; b <= a; b += 2) {
-                printf("%d, ", b);
+            for (int i = b; i <= a; i += 2) {
+                printf("%d, ", i);
             }
         }
         else {
-            b++;
-            for (b; b <= a; b += 2) {
-                printf("%d, ", b);
+            for (int i = b + 1; i <= a; i += 2) {
+                printf("%d, ", i);
             }
         }
     }
