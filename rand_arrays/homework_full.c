@@ -17,7 +17,7 @@ int main() {
     int count_of_items = 0;
 
     do {
-        printf("How many integers do you want to generate? (1000-20 000): ");
+        printf("How many integers do you want to generate? (1000-20000): ");
         scanf("%d", &count);
     }
     while (count < 1000 || count > 20000);
@@ -32,7 +32,7 @@ int main() {
     do { // loop which checks if user wants to see another part of the program
         int choice;
         do { // choose which part of the homework to display
-            printf("Which part of the homework would you like to see?(2-7): ");
+            printf("Which part of the homework would you like to see? (2-7): ");
             scanf("%d", &choice);
         }
         while (choice < 2 || choice > 7);
