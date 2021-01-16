@@ -18,7 +18,7 @@ int main(void) {
     token = strtok(str, ".");
     while (token != NULL) {
         part = atoi(token);
-        if (part < 256) {
+        if (part < 256 && part >= 0) {
             check++;
         }
         token = strtok(NULL, ".");
