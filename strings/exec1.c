@@ -14,6 +14,27 @@ int main(void) {
     printf("Enter the address you want to check: ");
     scanf("%s", str);
     strcpy(str_orig, str);
+    // TODO: finish code to repair wrong inputs
+//    if (str[0] == 46) {
+//        str[0] = '\0';
+//    }
+    if (str[0] == 46) {
+        printf("%s is not a valid IPV4 address.\n", str_orig);
+        exit(0);
+    }
+//    for (int i = 0; i < strlen(str); ++i) {
+//        if (str[i] == 46 && str[i+1] == 46) {
+//            for (int n = 0; n < (strlen(str)-i); n++) {
+//                str[i+n] = str[i+n+1];
+//            }
+//        }
+//    }
+    for (int i = 0; i < strlen(str); ++i) {
+        if (str[i] == 46 && str[i+1] == 46) {
+            printf("%s is not a valid IPV4 address.\n", str_orig);
+            exit(0);
+        }
+    }
 
     token = strtok(str, ".");
     while (token != NULL) {
