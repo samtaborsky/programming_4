@@ -5,8 +5,8 @@
 #define MAX 1000
 
 int main(void) {
-    char str[MAX];
-    char str_orig[MAX];
+    char str[MAX] = "";
+    char str_orig[MAX] = "";
     char *token = NULL;
     int part = 0;
     int check = 0;
