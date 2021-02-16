@@ -141,7 +141,7 @@ int isPasswordStrong(char password[]) {
 }
 
 int main(void) {
-    // for testing, edit the values in the definitions section
+    // for testing, please edit the values in the definitions section
 
     printf("comb(%d, %d) = %ld\n", bc1, bc2, comb(bc1, bc2));
     printf("sumOfDigits(%d) = %d\n", dig_sum, sumOfDigits(dig_sum));
