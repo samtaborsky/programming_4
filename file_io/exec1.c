@@ -17,7 +17,7 @@ int main()
     char character;
     FILE *input, *output;
 
-    input = fopen("webpage.html", "r");
+    input = fopen("input_text.txt", "r");
     output = fopen("output_text.txt", "w");
 
     if (input == NULL) {
