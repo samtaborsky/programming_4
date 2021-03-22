@@ -6,9 +6,8 @@
 
 long count_chars(FILE *input)
 {
-    fseek(input, -1L, SEEK_END);
+    fseek(input, 0, SEEK_END);
     long size_of_file = ftell(input);
-    size_of_file++;
     return size_of_file;
 }
 
@@ -18,7 +17,7 @@ int main()
     char character;
     FILE *input, *output;
 
-    input = fopen("input_text.txt", "r");
+    input = fopen("webpage.html", "r");
     output = fopen("output_text.txt", "w");
 
     if (input == NULL) {
