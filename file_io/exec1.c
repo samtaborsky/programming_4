@@ -4,15 +4,13 @@
 
 #define MAX 1000
 
-long count_chars(FILE *input)
-{
+long count_chars(FILE *input) {
     fseek(input, 0, SEEK_END);
     long size_of_file = ftell(input);
     return size_of_file;
 }
 
-int main()
-{
+int main() {
     long count;
     char character;
     FILE *input, *output;
