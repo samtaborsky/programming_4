@@ -4,17 +4,12 @@
 
 #define MAX 1000
 
-long count_chars(FILE *input) {
-    fseek(input, 0, SEEK_END);
-    return ftell(input);
-}
-
-int main() {
-    long count;
-    char character;
+int main(void) {
+    char character = 0;
+    int state = 0;
     FILE *input, *output;
 
-    input = fopen("input_text.txt", "r");
+    input = fopen("webpage2.html", "r");
     output = fopen("output_text.txt", "w");
 
     if (input == NULL) {
@@ -26,15 +21,14 @@ int main() {
         return 1;
     }
 
-    count = count_chars(input);
-    fseek(input, -1L, SEEK_END);
-
-    while (count > 0) {
+    while (character != EOF) {
         character = fgetc(input);
-        if (character == 10) {}
-        else {fputc(character, output);}
-        fseek(input, -2L, SEEK_CUR);
-        count--;
+        if (character == 60) {state = 0;}
+        else if (character == 62) {state = 1;}
+        if (state == 1) {
+            if (character == 62) {}
+            else {fputc(character, output);}
+        }
     }
 
     fclose(input);
