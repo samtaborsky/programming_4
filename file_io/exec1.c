@@ -31,7 +31,12 @@ int main() {
 
     while (count > 0) {
         character = fgetc(input);
-        if (character == 10) {}
+        if (character == 10) {
+            fseek(input, -2L, SEEK_CUR);
+            if (fgetc(input) == 13) {}
+            else {fputc('\n', output);}
+            fseek(input, 1L, SEEK_CUR);
+        }
         else {fputc(character, output);}
         fseek(input, -2L, SEEK_CUR);
         count--;
