@@ -31,7 +31,6 @@ int main() {
 
     while (count > 0) {
         character = fgetc(input);
-        if (character == 10) {}
         if (character == 13) {}
         else {fputc(character, output);}
         fseek(input, -2L, SEEK_CUR);
