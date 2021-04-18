@@ -4,14 +4,9 @@
 
 #define MAX 1000
 
-long count_chars(FILE *input) {
-    fseek(input, 0, SEEK_END);
-    return ftell(input);
-}
-
-int main() {
+int main(void) {
     long count;
-    char character;
+    int character;
     FILE *input, *output;
 
     input = fopen("input_text.txt", "r");
@@ -26,7 +21,8 @@ int main() {
         return 1;
     }
 
-    count = count_chars(input);
+    fseek(input, 0, SEEK_END);
+    count = ftell(input);
     fseek(input, -1L, SEEK_END);
 
     while (count > 0) {

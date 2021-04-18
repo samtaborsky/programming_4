@@ -5,7 +5,7 @@
 #define MAX 1000
 
 int main(void) {
-    char character = 0;
+    int character;
     int state = 0;
     FILE *input, *output;
 
