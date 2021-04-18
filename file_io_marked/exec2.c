@@ -64,6 +64,7 @@ int main(void) {
             return EXIT_FAILURE;
         }
 
+        printf("Encrypted text: ");
         while ((character = fgetc(input)) != EOF) {
             if (isalpha(character)) {
                 if (islower(character)) {
@@ -98,6 +99,7 @@ int main(void) {
             return EXIT_FAILURE;
         }
 
+        printf("Decrypted text: ");
         while ((character = fgetc(input)) != EOF) {
             if (isalpha(character)) {
                 if (islower(character)) {
