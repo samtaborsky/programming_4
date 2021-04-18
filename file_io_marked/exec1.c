@@ -46,16 +46,24 @@ int main(void) {
                 }
                 fseek(input, 1L, SEEK_CUR);
             }
-            if (word_cnt >= 2) {
+            else if (word_cnt >= 2) {
                 words++;
             }
             word_cnt = 0;
         }
     }
 
-    fseek(input, -1L, SEEK_CUR);
-    int temp_char = fgetc(input);
-    if (!ispunct(temp_char)) {
+    if (word_cnt == 1) {
+        // this is to check for one letter words - A, a, I
+        // I could include also i but let's assume that the file is gramatically correct
+        fseek(input, -2L, SEEK_CUR);
+        last_char = fgetc(input);
+        if (last_char == 65 || last_char == 97 || last_char == 73) {
+            words++;
+        }
+        fseek(input, 1L, SEEK_CUR);
+    }
+    else if (word_cnt >= 2) {
         words++;
     }
 
