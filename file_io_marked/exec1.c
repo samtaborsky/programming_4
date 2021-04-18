@@ -53,6 +53,12 @@ int main(void) {
         }
     }
 
+    fseek(input, -1L, SEEK_CUR);
+    int temp_char = fgetc(input);
+    if (!ispunct(temp_char)) {
+        words++;
+    }
+
     printf("---------- Statistics of the text file ----------\n");
     printf("- Number of symbols: %d\n"
            "- Number of lowercase letters: %d\n"
