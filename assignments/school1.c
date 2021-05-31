@@ -4,33 +4,17 @@
 
 #define MAX 1000
 
-void printbinary(int number, int bits) {
-    char array[bits];
-    int length = bits;
-    while (number != 0) {
-        array[bits-1] = number % 2;
-        number /= 2;
-        bits--;
-    }
-    bits--;
-    for (int i = bits; i >= 0; i--) {
-        array[i] = 0;
-    }
-    for (int i = 0; i < length; i++) {
-        printf("%d", array[i]);
-    }
-    printf("\n");
+void printbinary(int number) {
+    for (int i = sizeof(number) * 8 - 1; i >= 0; i--){printf("%d", number >> i & 1);}; printf("\n");
 }
 
 int main(void) {
-    int number1, number2;
-    printbinary(16383, 16);
-    printf("Enter number 1: ");
-    scanf("%d", &number1);
-    printf("Enter number 2: ");
-    scanf("%d", &number2);
-
-
-     return 0;
+    int shift;
+    int number1 = 63;
+    printf("Enter which bit u want to clear: ");
+    scanf("%d", &shift);
+    printbinary(number1);
+    int output = number1 ^ (1 << shift);
+    printbinary(output);
+    return 0;
 }
-
