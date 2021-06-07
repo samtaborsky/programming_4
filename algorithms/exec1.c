@@ -1,6 +1,6 @@
 /*
  * Author: Samuel Táborský
- * Last revision: 6.7.2021
+ * Last revision: 7.6.2021
  *
  * Program 1
  *
